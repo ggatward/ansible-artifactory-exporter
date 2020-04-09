@@ -6,6 +6,13 @@ After=network-online.target
 StartLimitInterval=0
 
 [Service]
+{% if artifactory_auth == 'basic' %}
+Environment="ARTI_USERNAME={{ artifactory_user }}"
+Environment="ARTI_PASSWORD={{ artifactory_password }}"
+{% endif %}
+{% if artifactory_auth == 'token' %}
+Environment="ARTI_ACCESS_TOKEN={{ artifactory_token }}"
+{% endif %}
 Type=simple
 User={{ artifactory_exporter_system_user }}
 Group={{ artifactory_exporter_system_group }}

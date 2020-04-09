@@ -8,14 +8,3 @@
   when:
     - ansible_version.full is version_compare('2.4', '>=')
     - ansible_selinux.status == "enabled"
-
-- name: Set environment vars for basic access
-  command: "{{ item }}"
-  with_items:
-    - 'export ARTI_USERNAME={{ artifactory_user }}'
-    - 'export ARTI_PASSWORD={{ artifactory_password }}'
-  when: artifactory_auth == 'basic'
-
-- name: Set environment vars for token access
-  command: export ARTI_ACCESS_TOKEN={{ artifactory_token }}
-  when: artifactory_auth == 'token'

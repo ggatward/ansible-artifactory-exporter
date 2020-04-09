@@ -3,6 +3,7 @@ artifactory_exporter_version: 0.5.1
 artifactory_exporter_web_listen_address: "0.0.0.0:9531"
 
 artifactory_scrape_uri: http://localhost:8081/artifactory
+artifactory_auth: basic
 artifactory_user: prometheus
 artifactory_password: 'ChangeMe'
 artifactory_bearer_token: xxxxxxxxxxxxxxxxxxxxx
