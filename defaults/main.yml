@@ -6,3 +6,7 @@ artifactory_scrape_uri: http://localhost:8081/artifactory
 artifactory_user: prometheus
 artifactory_ssl_verify: false
 artifactory_timeout: 5s
+
+artifactory_config_flags_extra: {}
+# artifactory_config_flags_extra:
+#   log.level: 'debug'
