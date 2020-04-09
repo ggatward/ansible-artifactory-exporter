@@ -4,6 +4,8 @@ artifactory_exporter_web_listen_address: "0.0.0.0:9531"
 
 artifactory_scrape_uri: http://localhost:8081/artifactory
 artifactory_user: prometheus
+artifactory_password: 'ChangeMe'
+artifactory_bearer_token: xxxxxxxxxxxxxxxxxxxxx
 artifactory_ssl_verify: false
 artifactory_timeout: 5s
 

@@ -14,8 +14,7 @@ ExecStart=/usr/local/bin/artifactory_exporter \
   --artifactory.ssl-verify \
 {% endif %}
   --artifactory.scrape-uri="{{ artifactory_scrape_uri }}" \
-  --artifactory.user="{{ artifactory_user }}"
-  --artifactory.timeout={{ artifactory_timeout }}
+  --artifactory.timeout={{ artifactory_timeout }} \
   --web.listen-address={{ artifactory_exporter_web_listen_address }}{% for flag, flag_value in artifactory_config_flags_extra.items() %}\
   --{{ flag }}{% if flag_value %}={{ flag_value }}{% endif %} {% endfor %}
 PrivateTmp=true
