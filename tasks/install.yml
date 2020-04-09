@@ -39,13 +39,13 @@
   unarchive:
     src: "/tmp/artifactory_exporter-{{ artifactory_exporter_version }}.linux-{{ go_arch_map[ansible_architecture] | default(ansible_architecture) }}.tar.gz"
     dest: "/tmp"
-    creates: "/tmp/artifactory_exporter-{{ artifactory_exporter_version }}.linux-{{ go_arch_map[ansible_architecture] | default(ansible_architecture) }}/artifactory_exporter"
+    creates: "/tmp/artifactory_exporter"
   delegate_to: localhost
   check_mode: false
 
 - name: Propagate artifactory_exporter binaries
   copy:
-    src: "/tmp/artifactory_exporter-{{ artifactory_exporter_version }}.linux-{{ go_arch_map[ansible_architecture] | default(ansible_architecture) }}/artifactory_exporter"
+    src: "/tmp/artifactory_exporter"
     dest: "/usr/local/bin/artifactory_exporter"
     mode: 0750
     owner: "{{ artifactory_exporter_system_user }}"
