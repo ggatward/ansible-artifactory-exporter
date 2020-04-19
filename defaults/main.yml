@@ -1,5 +1,5 @@
 ---
-artifactory_exporter_version: 0.5.3
+artifactory_exporter_version: 0.7.0
 artifactory_exporter_web_listen_address: "0.0.0.0:9531"
 
 artifactory_scrape_uri: http://localhost:8081/artifactory
