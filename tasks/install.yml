@@ -24,7 +24,7 @@
 - name: Download artifactory_exporter binary to local folder
   become: false
   get_url:
-    url: "https://github.com/peimanja/artifactory_exporter/releases/download/v{{ artifactory_exporter_version }}/artifactory_exporter_v{{ artifactory_exporter_version }}_linux_{{ go_arch_map[ansible_architecture] | default(ansible_architecture) }}.tar.gz"
+    url: "https://github.com/peimanja/artifactory_exporter/releases/download/v{{ artifactory_exporter_version }}/artifactory_exporter-v{{ artifactory_exporter_version }}-linux-{{ go_arch_map[ansible_architecture] | default(ansible_architecture) }}.tar.gz"
     dest: "/tmp/artifactory_exporter-{{ artifactory_exporter_version }}.linux-{{ go_arch_map[ansible_architecture] | default(ansible_architecture) }}.tar.gz"
 #    checksum: "sha256:{{ artifactory_exporter_checksum }}"
   register: _download_binary
